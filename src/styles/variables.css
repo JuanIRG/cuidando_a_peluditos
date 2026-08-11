@@ -1,0 +1,73 @@
+:root {
+  /* =========================
+     Colors
+     ========================= */
+
+  --color-primary: #2f6b57;
+  --color-primary-hover: #255444;
+
+  --color-accent: #f2b56b;
+
+  --color-background: #fffdf8;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f6f7f4;
+
+  --color-text: #24312c;
+  --color-text-muted: #66736d;
+
+  --color-border: #e5e9e6;
+
+  /* =========================
+     Typography
+     ========================= */
+
+  --font-family-base:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+
+  /* =========================
+     Layout
+     ========================= */
+
+  --container-max-width: 72rem;
+  --container-padding: 1.25rem;
+
+  --section-spacing: 4.5rem;
+
+  /* =========================
+     Border radius
+     ========================= */
+
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-pill: 999px;
+
+  /* =========================
+     Shadows
+     ========================= */
+
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 0.06);
+  --shadow-md: 0 10px 30px rgb(0 0 0 / 0.08);
+
+  /* =========================
+     Transitions
+     ========================= */
+
+  --transition-fast: 180ms ease;
+  --transition-normal: 280ms ease;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 2rem;
+    --section-spacing: 6rem;
+  }
+}
