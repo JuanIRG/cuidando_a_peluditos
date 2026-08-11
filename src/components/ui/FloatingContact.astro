@@ -1,0 +1,322 @@
+---
+import {
+  siInstagram,
+  siWhatsapp,
+} from "simple-icons";
+
+const whatsappUrl = "#";
+const instagramUrl = "#";
+---
+
+<aside
+  class="floating-contact"
+  aria-label="Contacto rápido"
+>
+  <!-- WhatsApp -->
+
+  <a
+    class="floating-button floating-whatsapp"
+    href={whatsappUrl}
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg
+      class="brand-icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d={siWhatsapp.path}></path>
+    </svg>
+
+    <span class="floating-label">
+      WhatsApp
+    </span>
+  </a>
+
+  <!-- Instagram -->
+
+  <a
+    class="floating-button floating-instagram"
+    href={instagramUrl}
+    aria-label="Visitar Instagram"
+  >
+    <svg
+      class="brand-icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d={siInstagram.path}></path>
+    </svg>
+
+    <span class="floating-label">
+      Instagram
+    </span>
+  </a>
+</aside>
+
+<style>
+  /* =========================================================
+     CONTENEDOR
+     ========================================================= */
+
+  .floating-contact {
+    position: fixed;
+
+    z-index: 60;
+
+    right: 1rem;
+    bottom: 1rem;
+
+    /*
+     * GRID, NO FLEX.
+     *
+     * Cada hijo mantiene su propio ancho.
+     */
+    display: grid;
+
+    grid-template-columns:
+      max-content;
+
+    justify-items: end;
+
+    gap: 0.6rem;
+
+    width: max-content;
+  }
+
+  /* =========================================================
+     BOTONES
+     ========================================================= */
+
+  .floating-button {
+    /*
+     * Cada botón tiene su propio
+     * ancho de forma independiente.
+     */
+    inline-size: 3.2rem;
+    block-size: 3.2rem;
+
+    min-inline-size: 3.2rem;
+    max-inline-size: 3.2rem;
+
+    justify-self: end;
+
+    display: grid;
+
+    grid-template-columns:
+      1.25rem
+      0fr;
+
+    align-items: center;
+    justify-content: center;
+
+    column-gap: 0;
+
+    overflow: hidden;
+
+    padding-inline: 0;
+
+    border:
+      1px solid
+      rgb(255 255 255 / 0.75);
+
+    border-radius:
+      var(--radius-pill);
+
+    box-shadow:
+      0 9px 24px
+      rgb(39 48 90 / 0.14);
+
+    transition:
+      inline-size
+      var(--transition-normal),
+      max-inline-size
+      var(--transition-normal),
+      padding
+      var(--transition-normal),
+      grid-template-columns
+      var(--transition-normal),
+      column-gap
+      var(--transition-normal),
+      transform
+      var(--transition-fast),
+      box-shadow
+      var(--transition-fast),
+      background-color
+      var(--transition-fast);
+  }
+
+  /* =========================================================
+     WHATSAPP
+     ========================================================= */
+
+  .floating-whatsapp {
+    color:
+      #ffffff;
+
+    background:
+      var(--color-primary);
+  }
+
+  /* =========================================================
+     INSTAGRAM
+     ========================================================= */
+
+  .floating-instagram {
+    color:
+      var(--color-secondary);
+
+    background:
+      rgb(255 255 255 / 0.96);
+  }
+
+  /* =========================================================
+     ICONO
+     ========================================================= */
+
+  .brand-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+
+    display: block;
+
+    fill:
+      currentColor;
+  }
+
+  /* =========================================================
+     TEXTO
+     ========================================================= */
+
+  .floating-label {
+    min-width: 0;
+
+    overflow: hidden;
+
+    font-family:
+      var(--font-family-heading);
+
+    font-size: 0.84rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition:
+      opacity
+      var(--transition-fast);
+  }
+
+  /* =========================================================
+     DESKTOP
+     ========================================================= */
+
+  @media (min-width: 900px) {
+    .floating-contact {
+      right: 1.35rem;
+      bottom: 1.35rem;
+    }
+
+    .floating-button {
+      inline-size: 3.25rem;
+      block-size: 3.25rem;
+
+      min-inline-size: 3.25rem;
+      max-inline-size: 3.25rem;
+    }
+  }
+
+  /* =========================================================
+     HOVER DESKTOP
+     ========================================================= */
+
+  @media (hover: hover) and (pointer: fine) {
+    /*
+     * SOLO el enlace que tiene :hover
+     * cambia su propio inline-size.
+     */
+
+    .floating-button:hover {
+      inline-size: 8.6rem;
+
+      max-inline-size: 8.6rem;
+
+      grid-template-columns:
+        1.25rem
+        1fr;
+
+      justify-content: start;
+
+      column-gap: 0.55rem;
+
+      padding-inline:
+        0.95rem;
+
+      transform:
+        translateY(-0.12rem);
+
+      box-shadow:
+        0 13px 30px
+        rgb(39 48 90 / 0.18);
+    }
+
+    .floating-button:hover
+    .floating-label {
+      opacity: 1;
+    }
+
+    .floating-whatsapp:hover {
+      background:
+        var(--color-primary-hover);
+    }
+  }
+
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+
+  @media (max-width: 899px) {
+    .floating-contact {
+      right: 0.85rem;
+      bottom: 0.85rem;
+    }
+
+    /*
+     * En táctil NO hay expansión.
+     */
+
+    .floating-button,
+    .floating-button:hover {
+      inline-size: 3.15rem;
+
+      min-inline-size: 3.15rem;
+      max-inline-size: 3.15rem;
+
+      block-size: 3.15rem;
+
+      grid-template-columns:
+        1.25rem;
+
+      column-gap: 0;
+
+      padding: 0;
+
+      justify-content: center;
+    }
+
+    .floating-label {
+      display: none;
+    }
+  }
+
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+    .floating-button,
+    .floating-label {
+      transition: none;
+    }
+  }
+</style>

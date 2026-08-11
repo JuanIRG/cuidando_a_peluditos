@@ -1,27 +1,52 @@
 :root {
   /* =========================
-     Colors
+     Brand colors
      ========================= */
 
-  --color-primary: #2f6b57;
-  --color-primary-hover: #255444;
+  --color-primary: #f48fa3;
+  --color-primary-hover: #ec758d;
+  --color-primary-dark: #dc647e;
 
-  --color-accent: #f2b56b;
+  --color-secondary: #27305a;
 
-  --color-background: #fffdf8;
+  --color-accent: #f7b7c3;
+
+  /* =========================
+     Backgrounds
+     ========================= */
+
+  --color-background: #fff9f8;
   --color-surface: #ffffff;
-  --color-surface-soft: #f6f7f4;
 
-  --color-text: #24312c;
-  --color-text-muted: #66736d;
+  --color-surface-soft: #fdecef;
+  --color-surface-accent: #fff1f3;
 
-  --color-border: #e5e9e6;
+  /* =========================
+     Text
+     ========================= */
+
+  --color-text: #27305a;
+  --color-text-muted: #606784;
+  --color-text-light: #ffffff;
+
+  /* =========================
+     Borders
+     ========================= */
+
+  --color-border: #f2dfe3;
+  --color-border-strong: #f7b7c3;
 
   /* =========================
      Typography
      ========================= */
 
+  --font-family-heading:
+    "Fredoka",
+    system-ui,
+    sans-serif;
+
   --font-family-base:
+    "Nunito",
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -31,6 +56,15 @@
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
+
+  /* =========================
+     Font weights
+     ========================= */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 
   /* =========================
      Layout
@@ -45,17 +79,24 @@
      Border radius
      ========================= */
 
-  --radius-sm: 0.5rem;
-  --radius-md: 1rem;
-  --radius-lg: 1.5rem;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 2rem;
+  --radius-xl: 2.75rem;
   --radius-pill: 999px;
 
   /* =========================
      Shadows
      ========================= */
 
-  --shadow-sm: 0 2px 8px rgb(0 0 0 / 0.06);
-  --shadow-md: 0 10px 30px rgb(0 0 0 / 0.08);
+  --shadow-sm:
+    0 4px 14px rgb(39 48 90 / 0.05);
+
+  --shadow-md:
+    0 14px 35px rgb(39 48 90 / 0.08);
+
+  --shadow-card:
+    0 12px 30px rgb(244 143 163 / 0.10);
 
   /* =========================
      Transitions

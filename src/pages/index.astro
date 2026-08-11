@@ -1,17 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+import Header from "../components/sections/Header.astro";
+import Hero from "../components/sections/Hero.astro";
+import About from "../components/sections/About.astro";
+
+import FloatingContact from "../components/ui/FloatingContact.astro";
 ---
 
 <BaseLayout>
-  <main>
-    <section class="section">
-      <div class="container">
-        <h1>Cuidando a Peluditos</h1>
+  <Header />
 
-        <p>
-          Base del proyecto lista.
-        </p>
-      </div>
-    </section>
+  <main id="inicio">
+    <Hero />
+    <About />
   </main>
+
+  <FloatingContact />
 </BaseLayout>

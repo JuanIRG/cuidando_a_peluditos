@@ -1,0 +1,1038 @@
+---
+import { Image } from "astro:assets";
+
+import {
+  ArrowRight,
+  Heart,
+  PawPrint,
+  Sparkles,
+} from "@lucide/astro";
+
+import danielaHero from "../../assets/images/daniela_hero.png";
+---
+
+<section
+  class="hero"
+  aria-labelledby="hero-title"
+>
+  <div class="container hero-container">
+
+    <!-- =====================================================
+         CONTENIDO
+         ===================================================== -->
+
+    <div class="hero-copy">
+
+      <div
+        class="hero-heading"
+        data-reveal="right"
+      >
+        <h1 id="hero-title">
+          Paseos y cuidados con cariño
+
+          <span>
+            para tu peludito
+          </span>
+        </h1>
+
+        <span
+          class="hero-underline"
+          aria-hidden="true"
+        ></span>
+
+        <Heart
+          class="hero-title-heart"
+          size={21}
+          stroke-width={1.8}
+          aria-hidden="true"
+        />
+      </div>
+
+      <p
+        class="hero-description"
+        data-reveal="up"
+        data-reveal-delay="80"
+      >
+        Cariño, compañía y tranquilidad
+        cuando no puedes estar a su lado.
+      </p>
+
+      <div
+        class="hero-actions"
+        data-reveal="up"
+        data-reveal-delay="150"
+      >
+        <a
+          class="hero-button"
+          href="#servicios"
+        >
+          <span class="hero-button-icon">
+            <PawPrint
+              size={21}
+              stroke-width={2}
+              aria-hidden="true"
+            />
+          </span>
+
+          <span>
+            Ver servicios
+          </span>
+
+          <ArrowRight
+            class="hero-button-arrow"
+            size={19}
+            stroke-width={2.1}
+            aria-hidden="true"
+          />
+        </a>
+      </div>
+
+    </div>
+
+    <!-- =====================================================
+         FOTOGRAFÍA
+         ===================================================== -->
+
+    <div
+      class="hero-visual"
+      data-reveal="scale"
+      data-reveal-delay="100"
+    >
+
+      <!-- Mancha rosa principal -->
+
+      <div
+        class="hero-photo-shape"
+        aria-hidden="true"
+      ></div>
+
+      <!-- Mancha secundaria -->
+
+      <div
+        class="hero-photo-shape-secondary"
+        aria-hidden="true"
+      ></div>
+
+      <!-- Marco -->
+
+      <div class="hero-photo-frame">
+        <Image
+          src={danielaHero}
+          alt="Daniela jugando con uno de los peluditos que cuida"
+          class="hero-image"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+
+      <!-- Decoraciones -->
+
+      <span
+        class="hero-detail hero-detail-heart"
+        aria-hidden="true"
+      >
+        <Heart
+          size={19}
+          stroke-width={1.8}
+        />
+      </span>
+
+      <span
+        class="hero-detail hero-detail-spark"
+        aria-hidden="true"
+      >
+        <Sparkles
+          size={19}
+          stroke-width={1.8}
+        />
+      </span>
+
+      <span
+        class="hero-detail hero-detail-paw"
+        aria-hidden="true"
+      >
+        <PawPrint
+          size={19}
+          stroke-width={1.8}
+        />
+      </span>
+
+    </div>
+
+  </div>
+
+  <!-- =====================================================
+       Decoraciones ambientales
+       ===================================================== -->
+
+  <div
+    class="hero-background-shape hero-background-top"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="hero-background-shape hero-background-bottom"
+    aria-hidden="true"
+  ></div>
+</section>
+
+<style>
+  /* =========================================================
+     HERO
+     ========================================================= */
+
+  .hero {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+      1.75rem
+      0
+      2.1rem;
+
+    background:
+      linear-gradient(
+        180deg,
+        #fff8f7 0%,
+        var(--color-background) 100%
+      );
+  }
+
+  /* =========================================================
+     FONDO DECORATIVO
+     ========================================================= */
+
+  .hero-background-shape {
+    position: absolute;
+
+    z-index: 0;
+
+    pointer-events: none;
+  }
+
+  .hero-background-top {
+    width: 18rem;
+    height: 12rem;
+
+    top: -7rem;
+    left: -7rem;
+
+    background:
+      rgb(247 183 195 / 0.18);
+
+    border-radius:
+      45% 55% 62% 38% /
+      52% 42% 58% 48%;
+
+    transform:
+      rotate(-10deg);
+  }
+
+  .hero-background-bottom {
+    width: 20rem;
+    height: 10rem;
+
+    right: -8rem;
+    bottom: -6rem;
+
+    background:
+      rgb(253 236 239 / 0.55);
+
+    border-radius:
+      55% 45% 42% 58% /
+      48% 55% 45% 52%;
+
+    transform:
+      rotate(8deg);
+  }
+
+  /* =========================================================
+     MOBILE FIRST
+     ========================================================= */
+
+  .hero-container {
+    position: relative;
+
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    gap: 1.55rem;
+
+    max-width: 78rem;
+  }
+
+  /* =========================================================
+     CONTENIDO
+     ========================================================= */
+
+  .hero-copy {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+  }
+
+  /* =========================================================
+     TÍTULO
+     ========================================================= */
+
+  .hero-heading {
+    position: relative;
+
+    width: fit-content;
+
+    max-width: 20rem;
+  }
+
+  .hero-heading h1 {
+    max-width: 20rem;
+
+    font-size:
+      clamp(
+        2.8rem,
+        12vw,
+        3.65rem
+      );
+
+    line-height: 0.96;
+
+    letter-spacing:
+      -0.045em;
+  }
+
+  .hero-heading h1 span {
+    display: block;
+
+    margin-top: 0.28rem;
+
+    color:
+      var(--color-primary);
+  }
+
+  /* =========================================================
+     RAYA DECORATIVA
+     ========================================================= */
+
+  .hero-underline {
+    display: block;
+
+    width: 4.8rem;
+    height: 0.22rem;
+
+    margin-top: 0.5rem;
+
+    background:
+      var(--color-primary);
+
+    border-radius:
+      var(--radius-pill);
+
+    transform:
+      rotate(-4deg);
+
+    opacity: 0.82;
+  }
+
+  .hero-title-heart {
+    position: absolute;
+
+    right: -0.65rem;
+    top: 0.25rem;
+
+    color:
+      var(--color-primary);
+
+    transform:
+      rotate(12deg);
+  }
+
+  /* =========================================================
+     DESCRIPCIÓN
+     ========================================================= */
+
+  .hero-description {
+    max-width: 20rem;
+
+    margin-top: 0.95rem;
+
+    font-size: 0.97rem;
+    line-height: 1.55;
+
+    color:
+      var(--color-text-muted);
+  }
+
+  /* =========================================================
+     BOTÓN
+     ========================================================= */
+
+  .hero-actions {
+    margin-top: 1.15rem;
+  }
+
+  .hero-button {
+    min-height: 3.35rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.72rem;
+
+    padding:
+      0.65rem
+      1.15rem
+      0.65rem
+      0.7rem;
+
+    font-family:
+      var(--font-family-heading);
+
+    font-size: 1rem;
+    font-weight:
+      var(--font-weight-semibold);
+
+    color:
+      var(--color-text-light);
+
+    background:
+      linear-gradient(
+        135deg,
+        var(--color-primary),
+        var(--color-primary-hover)
+      );
+
+    border-radius:
+      var(--radius-pill);
+
+    box-shadow:
+      0 10px 24px
+      rgb(244 143 163 / 0.25);
+
+    transition:
+      transform
+      var(--transition-fast),
+      box-shadow
+      var(--transition-fast);
+  }
+
+  .hero-button-icon {
+    width: 2.05rem;
+    height: 2.05rem;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    background:
+      rgb(255 255 255 / 0.13);
+
+    border-radius:
+      var(--radius-pill);
+  }
+
+  .hero-button-arrow {
+    margin-left: 0.1rem;
+
+    transition:
+      transform
+      var(--transition-fast);
+  }
+
+  /* =========================================================
+     FOTO MOBILE
+
+     Solo modificamos:
+     - más ancho
+     - menos alto
+     ========================================================= */
+
+  .hero-visual {
+    position: relative;
+
+    isolation: isolate;
+
+    width:
+      min(
+        96%,
+        22rem
+      );
+
+    margin-inline: auto;
+  }
+
+  /* =========================================================
+     MANCHA ROSA PRINCIPAL
+     ========================================================= */
+
+  .hero-photo-shape {
+    position: absolute;
+
+    z-index: -2;
+
+    inset:
+      0.65rem
+      -0.55rem
+      -0.55rem
+      0.65rem;
+
+    background:
+      rgb(253 236 239 / 0.95);
+
+    border-radius:
+      19% 13% 20% 15% /
+      14% 18% 15% 19%;
+
+    transform:
+      rotate(-2deg);
+  }
+
+  /* =========================================================
+     MANCHA SECUNDARIA
+     ========================================================= */
+
+  .hero-photo-shape-secondary {
+    position: absolute;
+
+    z-index: -3;
+
+    width: 8rem;
+    height: 5.5rem;
+
+    right: -1.2rem;
+    top: -1.2rem;
+
+    background:
+      rgb(247 183 195 / 0.22);
+
+    border-radius:
+      60% 40% 55% 45% /
+      45% 60% 40% 55%;
+
+    transform:
+      rotate(12deg);
+  }
+
+  /* =========================================================
+     MARCO MOBILE
+     ========================================================= */
+
+  .hero-photo-frame {
+    position: relative;
+
+    width: 100%;
+
+    /*
+     * Más horizontal que antes.
+     */
+    aspect-ratio:
+      1.35 / 1;
+
+    overflow: hidden;
+
+    padding: 0.32rem;
+
+    background:
+      rgb(255 255 255 / 0.94);
+
+    border:
+      1px solid
+      rgb(247 183 195 / 0.6);
+
+    border-radius:
+      18% 13% 19% 15% /
+      13% 17% 14% 18%;
+
+    box-shadow:
+      0 14px 32px
+      rgb(39 48 90 / 0.1);
+
+    transition:
+      transform
+      var(--transition-normal),
+      box-shadow
+      var(--transition-normal);
+  }
+
+  .hero-photo-frame
+  :global(.hero-image) {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position:
+      center 20%;
+
+    border-radius:
+      16% 11% 17% 13% /
+      11% 15% 12% 16%;
+  }
+
+  /* =========================================================
+     DETALLES FOTO
+     ========================================================= */
+
+  .hero-detail {
+    position: absolute;
+
+    z-index: 3;
+
+    display: grid;
+    place-items: center;
+
+    color:
+      var(--color-primary);
+
+    background:
+      rgb(255 249 248 / 0.96);
+
+    border:
+      1px solid
+      rgb(247 183 195 / 0.5);
+
+    border-radius:
+      var(--radius-pill);
+
+    box-shadow:
+      var(--shadow-sm);
+
+    pointer-events: none;
+  }
+
+  .hero-detail-heart {
+    width: 2.05rem;
+    height: 2.05rem;
+
+    left: -0.55rem;
+    top: 27%;
+
+    transform:
+      rotate(-8deg);
+  }
+
+  .hero-detail-spark {
+    width: 2.05rem;
+    height: 2.05rem;
+
+    right: -0.25rem;
+    top: 6%;
+
+    transform:
+      rotate(8deg);
+  }
+
+  .hero-detail-paw {
+    width: 2.35rem;
+    height: 2.35rem;
+
+    right: -0.45rem;
+    bottom: 0.7rem;
+
+    color:
+      var(--color-secondary);
+
+    background:
+      var(--color-surface-soft);
+  }
+
+  /* =========================================================
+     MOBILE MEDIANO
+     ========================================================= */
+
+  @media (min-width: 420px) {
+    .hero {
+      padding:
+        2rem
+        0
+        2.25rem;
+    }
+
+    .hero-container {
+      gap: 1.7rem;
+    }
+
+    .hero-heading {
+      max-width: 24rem;
+    }
+
+    .hero-heading h1 {
+      max-width: 24rem;
+
+      font-size:
+        clamp(
+          3rem,
+          10vw,
+          3.9rem
+        );
+    }
+
+    .hero-description {
+      max-width: 23rem;
+
+      font-size: 1rem;
+    }
+
+    /*
+     * También un poco más ancha
+     * en móviles grandes.
+     */
+    .hero-visual {
+      width:
+        min(
+          96%,
+          24rem
+        );
+    }
+  }
+
+  /* =========================================================
+     TABLET
+     ========================================================= */
+
+  @media (min-width: 700px) {
+    .hero {
+      padding:
+        2.4rem
+        0
+        2.7rem;
+    }
+
+    .hero-container {
+      grid-template-columns:
+        minmax(0, 0.92fr)
+        minmax(21rem, 1.08fr);
+
+      gap: 2.5rem;
+
+      align-items: center;
+    }
+
+    .hero-copy {
+      align-self: center;
+    }
+
+    .hero-heading {
+      max-width: 29rem;
+    }
+
+    .hero-heading h1 {
+      max-width: 29rem;
+
+      font-size:
+        clamp(
+          3.8rem,
+          7vw,
+          4.8rem
+        );
+    }
+
+    .hero-description {
+      max-width: 25rem;
+
+      margin-top: 1.1rem;
+
+      font-size: 1.06rem;
+    }
+
+    .hero-actions {
+      margin-top: 1.35rem;
+    }
+
+    .hero-visual {
+      width:
+        min(
+          100%,
+          26rem
+        );
+
+      margin: 0;
+
+      justify-self: end;
+    }
+
+    /*
+     * Tablet mantiene una proporción
+     * intermedia.
+     */
+    .hero-photo-frame {
+      aspect-ratio:
+        1.15 / 1;
+    }
+  }
+
+  /* =========================================================
+     DESKTOP
+     ========================================================= */
+
+  @media (min-width: 900px) {
+    .hero {
+    /*
+     * El Hero ocupa prácticamente
+     * toda la pantalla disponible
+     * debajo del header.
+     */
+    min-height:
+      calc(100svh - 4.5rem);
+
+    display: flex;
+    align-items: center;
+
+    padding:
+      2.7rem
+      0
+      3rem;
+  }
+
+  .hero-container {
+    width: 100%;
+
+    max-width: 82rem;
+
+    grid-template-columns:
+      minmax(31rem, 0.96fr)
+      minmax(34rem, 1.04fr);
+
+    gap: 1.75rem;
+
+    align-items: center;
+  }
+
+    .hero-heading {
+      max-width: 39rem;
+    }
+
+    .hero-heading h1 {
+      max-width: 39rem;
+
+      font-size:
+        clamp(
+          4.1rem,
+          4.6vw,
+          5.25rem
+        );
+
+      line-height: 0.96;
+    }
+
+    .hero-underline {
+      width: 6.25rem;
+      height: 0.25rem;
+
+      margin-top: 0.65rem;
+    }
+
+    .hero-title-heart {
+      right: -0.9rem;
+      top: 0.55rem;
+    }
+
+    .hero-description {
+      max-width: 29rem;
+
+      margin-top: 1.2rem;
+
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      margin-top: 1.45rem;
+    }
+
+    .hero-button {
+      min-height: 3.55rem;
+
+      padding:
+        0.72rem
+        1.3rem
+        0.72rem
+        0.75rem;
+
+      font-size: 1.03rem;
+    }
+
+    /* =========================
+       FOTO DESKTOP
+
+       ESTA PARTE LA MANTENEMOS.
+       ========================= */
+
+    .hero-visual {
+      width:
+        min(
+          100%,
+          39rem
+        );
+
+      margin: 0;
+
+      justify-self: end;
+    }
+
+    .hero-photo-frame {
+      aspect-ratio:
+        1.25 / 1;
+
+      padding: 0.42rem;
+
+      border-width: 2px;
+
+      border-radius:
+        16% 12% 18% 14% /
+        13% 17% 14% 18%;
+
+      box-shadow:
+        0 20px 46px
+        rgb(39 48 90 / 0.11);
+    }
+
+    .hero-photo-frame
+    :global(.hero-image) {
+      object-position:
+        center 24%;
+
+      border-radius:
+        14% 10% 16% 12% /
+        11% 15% 12% 16%;
+    }
+
+    .hero-photo-shape {
+      inset:
+        0.9rem
+        -0.8rem
+        -0.7rem
+        1rem;
+
+      border-radius:
+        18% 13% 20% 14% /
+        14% 19% 14% 18%;
+
+      transform:
+        rotate(-2deg);
+    }
+
+    .hero-photo-shape-secondary {
+      width: 13rem;
+      height: 8rem;
+
+      right: -2rem;
+      top: -2rem;
+    }
+
+    .hero-detail-heart {
+      width: 2.6rem;
+      height: 2.6rem;
+
+      left: -1rem;
+    }
+
+    .hero-detail-spark {
+      width: 2.7rem;
+      height: 2.7rem;
+
+      right: -0.6rem;
+    }
+
+    .hero-detail-paw {
+      width: 3rem;
+      height: 3rem;
+
+      right: -0.7rem;
+      bottom: 1rem;
+    }
+  }
+
+  /* =========================================================
+     DESKTOP GRANDE
+     ========================================================= */
+
+  @media (min-width: 1200px) {
+    .hero-container {
+      /*
+       * También menos separación
+       * que antes.
+       */
+      gap: 2.25rem;
+    }
+
+    .hero-visual {
+      width:
+        min(
+          100%,
+          41rem
+        );
+    }
+
+    .hero-photo-frame {
+      aspect-ratio:
+        1.28 / 1;
+    }
+  }
+
+  /* =========================================================
+     HOVER
+     ========================================================= */
+
+  @media (hover: hover) and (pointer: fine) {
+    .hero-button:hover {
+      transform:
+        translateY(-0.15rem);
+
+      box-shadow:
+        0 14px 30px
+        rgb(244 143 163 / 0.31);
+    }
+
+    .hero-button:hover
+    .hero-button-arrow {
+      transform:
+        translateX(0.22rem);
+    }
+
+    .hero-photo-frame:hover {
+      transform:
+        translateY(-0.2rem)
+        rotate(-0.15deg);
+
+      box-shadow:
+        0 24px 50px
+        rgb(39 48 90 / 0.14);
+    }
+  }
+
+  /* =========================================================
+     MOBILE PEQUEÑO
+     ========================================================= */
+
+  @media (max-width: 350px) {
+    .hero {
+      padding-top: 1.3rem;
+    }
+
+    .hero-heading h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 0.91rem;
+    }
+
+    .hero-visual {
+      width:
+        min(
+          94%,
+          20rem
+        );
+    }
+  }
+</style>
