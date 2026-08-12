@@ -4,40 +4,63 @@ import {
   siWhatsapp,
 } from "simple-icons";
 
-const whatsappUrl = "#";
-const instagramUrl = "#";
+const instagramUrl =
+  "https://www.instagram.com/cuidando_a_peluditos/";
+
+const whatsappUrl =
+  "https://wa.me/56998817498";
+
+/*
+ * Si finalmente se decide dejar
+ * solamente Instagram:
+ *
+ * const showWhatsApp = false;
+ */
+const showWhatsApp = true;
 ---
 
 <aside
   class="floating-contact"
   aria-label="Contacto rápido"
 >
-  <!-- WhatsApp -->
+  <!-- =====================================================
+       WHATSAPP
+       ===================================================== -->
 
-  <a
-    class="floating-button floating-whatsapp"
-    href={whatsappUrl}
-    aria-label="Contactar por WhatsApp"
-  >
-    <svg
-      class="brand-icon"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path d={siWhatsapp.path}></path>
-    </svg>
+  {
+    showWhatsApp && (
+      <a
+        class="floating-button floating-whatsapp"
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar a Cuidando a Peluditos por WhatsApp"
+      >
+        <svg
+          class="brand-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d={siWhatsapp.path}></path>
+        </svg>
 
-    <span class="floating-label">
-      WhatsApp
-    </span>
-  </a>
+        <span class="floating-label">
+          WhatsApp
+        </span>
+      </a>
+    )
+  }
 
-  <!-- Instagram -->
+  <!-- =====================================================
+       INSTAGRAM
+       ===================================================== -->
 
   <a
     class="floating-button floating-instagram"
     href={instagramUrl}
-    aria-label="Visitar Instagram"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visitar el Instagram de Cuidando a Peluditos"
   >
     <svg
       class="brand-icon"
@@ -69,7 +92,8 @@ const instagramUrl = "#";
     /*
      * GRID, NO FLEX.
      *
-     * Cada hijo mantiene su propio ancho.
+     * Cada hijo mantiene
+     * su propio ancho.
      */
     display: grid;
 
@@ -92,6 +116,7 @@ const instagramUrl = "#";
      * Cada botón tiene su propio
      * ancho de forma independiente.
      */
+
     inline-size: 3.2rem;
     block-size: 3.2rem;
 
@@ -128,21 +153,21 @@ const instagramUrl = "#";
 
     transition:
       inline-size
-      var(--transition-normal),
+        var(--transition-normal),
       max-inline-size
-      var(--transition-normal),
+        var(--transition-normal),
       padding
-      var(--transition-normal),
+        var(--transition-normal),
       grid-template-columns
-      var(--transition-normal),
+        var(--transition-normal),
       column-gap
-      var(--transition-normal),
+        var(--transition-normal),
       transform
-      var(--transition-fast),
+        var(--transition-fast),
       box-shadow
-      var(--transition-fast),
+        var(--transition-fast),
       background-color
-      var(--transition-fast);
+        var(--transition-fast);
   }
 
   /* =========================================================
@@ -204,7 +229,7 @@ const instagramUrl = "#";
 
     transition:
       opacity
-      var(--transition-fast);
+        var(--transition-fast);
   }
 
   /* =========================================================
@@ -231,6 +256,7 @@ const instagramUrl = "#";
      ========================================================= */
 
   @media (hover: hover) and (pointer: fine) {
+
     /*
      * SOLO el enlace que tiene :hover
      * cambia su propio inline-size.

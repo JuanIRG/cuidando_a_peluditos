@@ -25,10 +25,9 @@ import danielaHero from "../../assets/images/daniela_hero.png";
 
       <div
         class="hero-heading"
-        data-reveal="right"
       >
         <h1 id="hero-title">
-          Paseos y cuidados con cariño
+          Paseos y Cuidados con cariño
 
           <span>
             para tu peludito
@@ -50,11 +49,9 @@ import danielaHero from "../../assets/images/daniela_hero.png";
 
       <p
         class="hero-description"
-        data-reveal="up"
-        data-reveal-delay="80"
       >
-        Cariño, compañía y tranquilidad
-        cuando no puedes estar a su lado.
+        Cariño, compañía y tranquilidad para
+        cuando no puedas estar a su lado.
       </p>
 
       <div
@@ -95,8 +92,6 @@ import danielaHero from "../../assets/images/daniela_hero.png";
 
     <div
       class="hero-visual"
-      data-reveal="scale"
-      data-reveal-delay="100"
     >
 
       <!-- Mancha rosa principal -->
@@ -121,7 +116,11 @@ import danielaHero from "../../assets/images/daniela_hero.png";
           alt="Daniela jugando con uno de los peluditos que cuida"
           class="hero-image"
           loading="eager"
+          decoding="sync"
           fetchpriority="high"
+          quality={65}
+          widths={[320, 360, 480, 640, 800]}
+          sizes="(max-width: 419px) calc(100vw - 2.5rem), (max-width: 699px) 24rem, (max-width: 899px) 45vw, 41rem"
         />
       </div>
 
@@ -776,36 +775,36 @@ import danielaHero from "../../assets/images/daniela_hero.png";
 
   @media (min-width: 900px) {
     .hero {
-    /*
-     * El Hero ocupa prácticamente
-     * toda la pantalla disponible
-     * debajo del header.
-     */
-    min-height:
-      calc(100svh - 4.5rem);
+      /*
+       * El Hero ocupa prácticamente
+       * toda la pantalla disponible
+       * debajo del header.
+       */
+      min-height:
+        calc(100svh - 4.5rem);
 
-    display: flex;
-    align-items: center;
+      display: flex;
+      align-items: center;
 
-    padding:
-      2.7rem
-      0
-      3rem;
-  }
+      padding:
+        2.7rem
+        0
+        3rem;
+    }
 
-  .hero-container {
-    width: 100%;
+    .hero-container {
+      width: 100%;
 
-    max-width: 82rem;
+      max-width: 82rem;
 
-    grid-template-columns:
-      minmax(31rem, 0.96fr)
-      minmax(34rem, 1.04fr);
+      grid-template-columns:
+        minmax(31rem, 0.96fr)
+        minmax(34rem, 1.04fr);
 
-    gap: 1.75rem;
+      gap: 1.75rem;
 
-    align-items: center;
-  }
+      align-items: center;
+    }
 
     .hero-heading {
       max-width: 39rem;

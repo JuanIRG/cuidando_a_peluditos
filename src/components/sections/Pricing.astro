@@ -1,0 +1,1110 @@
+---
+import {
+  CalendarDays,
+  Heart,
+  HeartHandshake,
+  MessageCircleHeart,
+  Dog,
+  PawPrint,
+  MoonStar,
+} from "@lucide/astro";
+
+const walkRates = [
+  {
+    title: "Lunes a viernes",
+    description: "Paseos fijos, más de 3 a la semana",
+    price: "$10.000",
+  },
+  {
+    title: "Ocasionales",
+    description: "1 o 2 paseos a la semana",
+    price: "$13.000",
+  },
+  {
+    title: "Fin de semana o festivos",
+    description: "",
+    price: "$15.000",
+  },
+];
+
+const nightRates = [
+  {
+    title: "Lunes a viernes",
+    price: "$40.000",
+  },
+  {
+    title: "Viernes",
+    price: "$45.000",
+  },
+  {
+    title: "Sábado y domingo",
+    price: "$50.000",
+  },
+];
+---
+
+<section
+  class="pricing"
+  aria-labelledby="pricing-title"
+>
+  <div class="container pricing-container">
+
+    <!-- =====================================================
+         ENCABEZADO
+         ===================================================== -->
+
+    <header
+      id="tarifas"
+      class="pricing-heading"
+      data-reveal="up"
+    >
+      <div
+        class="pricing-heading-icon"
+        aria-hidden="true"
+      >
+        <Heart
+          size={17}
+          stroke-width={1.9}
+        />
+      </div>
+
+      <h2 id="pricing-title">
+        Tarifas
+      </h2>
+
+      <p>
+        Valores pensados según el tipo de cuidado
+        que necesita cada peludito.
+      </p>
+    </header>
+
+    <!-- =====================================================
+         CARDS
+         ===================================================== -->
+
+    <div class="pricing-grid">
+
+      <!-- ===================================================
+           PASEOS
+           =================================================== -->
+
+      <article
+        class="pricing-card"
+        data-reveal="up"
+      >
+        <header class="pricing-card-header">
+
+          <div
+            class="pricing-card-icon pricing-card-icon-walk"
+            aria-hidden="true"
+          >
+            <Dog
+              size={23}
+              stroke-width={1.8}
+            />
+          </div>
+
+          <div>
+            <h3>
+              Paseos
+            </h3>
+
+            <p>
+              Paseos de 45 min a 1 hora aprox.
+              en Zona Oriente.
+            </p>
+          </div>
+
+        </header>
+
+        <div class="pricing-list">
+          {
+            walkRates.map((rate) => (
+              <div class="pricing-row">
+
+                <div class="pricing-row-info">
+
+                  <span
+                    class="pricing-row-icon"
+                    aria-hidden="true"
+                  >
+                    <CalendarDays
+                      size={17}
+                      stroke-width={1.8}
+                    />
+                  </span>
+
+                  <div>
+                    <h4>
+                      {rate.title}
+                    </h4>
+
+                    {
+                      rate.description && (
+                        <p>
+                          {rate.description}
+                        </p>
+                      )
+                    }
+                  </div>
+
+                </div>
+
+                <strong class="pricing-price">
+                  {rate.price}
+                </strong>
+
+              </div>
+            ))
+          }
+        </div>
+      </article>
+
+      <!-- ===================================================
+           CUIDADOS NOCTURNOS
+           =================================================== -->
+
+      <article
+        class="pricing-card"
+        data-reveal="up"
+        data-reveal-delay="120"
+      >
+        <header class="pricing-card-header">
+
+          <div
+            class="pricing-card-icon pricing-card-icon-night"
+            aria-hidden="true"
+          >
+            <MoonStar
+              size={23}
+              stroke-width={1.8}
+            />
+          </div>
+
+          <div>
+            <h3>
+              Cuidados nocturnos
+            </h3>
+
+            <p>
+              Cuidado nocturno a domicilio con
+              2 paseos, AM y PM, de 45 min aprox.
+            </p>
+          </div>
+
+        </header>
+
+        <div class="pricing-list">
+          {
+            nightRates.map((rate) => (
+              <div class="pricing-row">
+
+                <div class="pricing-row-info">
+
+                  <span
+                    class="pricing-row-icon"
+                    aria-hidden="true"
+                  >
+                    <CalendarDays
+                      size={17}
+                      stroke-width={1.8}
+                    />
+                  </span>
+
+                  <div>
+                    <h4>
+                      {rate.title}
+                    </h4>
+                  </div>
+
+                </div>
+
+                <strong class="pricing-price">
+                  {rate.price}
+                </strong>
+
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="pricing-extra">
+
+          <PawPrint
+            size={19}
+            stroke-width={1.8}
+            aria-hidden="true"
+          />
+
+          <p>
+            Si hay más perritos, se suma un adicional de
+            <strong> $10.000 </strong>
+            por cada uno.
+          </p>
+
+        </div>
+      </article>
+
+      <!-- ===================================================
+           ESPECIALES
+           =================================================== -->
+
+      <article
+        class="pricing-card pricing-card-special"
+        data-reveal="up"
+        data-reveal-delay="240"
+      >
+        <header class="pricing-card-header">
+
+          <div
+            class="pricing-card-icon pricing-card-icon-special"
+            aria-hidden="true"
+          >
+            <HeartHandshake
+              size={23}
+              stroke-width={1.8}
+            />
+          </div>
+
+          <div>
+            <h3>
+              Especiales
+            </h3>
+
+            <p>
+              Cuidados personalizados según
+              las necesidades y rutina de tu peludito.
+            </p>
+          </div>
+
+        </header>
+
+        <div class="special-content">
+
+          <a
+            class="special-contact"
+            href="#contacto"
+          >
+            <span class="special-contact-icon">
+              <MessageCircleHeart
+                size={19}
+                stroke-width={1.9}
+                aria-hidden="true"
+              />
+            </span>
+
+            <span>
+              A conversar
+            </span>
+          </a>
+
+        </div>
+      </article>
+
+    </div>
+
+    <!-- =====================================================
+         NOTA FINAL
+         ===================================================== -->
+
+    <div
+      class="pricing-note"
+      data-reveal="up"
+      data-reveal-delay="300"
+    >
+      <Heart
+        size={19}
+        stroke-width={1.8}
+        aria-hidden="true"
+      />
+
+      <p>
+        Todos los servicios incluyen <strong>amor, paciencia y dedicación.</strong>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- =====================================================
+       DECORACIONES
+       ===================================================== -->
+
+  <span
+    class="pricing-blob pricing-blob-top"
+    aria-hidden="true"
+  ></span>
+
+  <span
+    class="pricing-blob pricing-blob-bottom"
+    aria-hidden="true"
+  ></span>
+
+  <span
+    class="pricing-decoration pricing-decoration-heart"
+    aria-hidden="true"
+  >
+    <Heart
+      size={27}
+      stroke-width={1.4}
+    />
+  </span>
+
+  <span
+    class="pricing-decoration pricing-decoration-paw"
+    aria-hidden="true"
+  >
+    <PawPrint
+      size={25}
+      stroke-width={1.4}
+    />
+  </span>
+</section>
+
+<style>
+  /* =========================================================
+     SECTION
+     ========================================================= */
+
+  .pricing {
+    position: relative;
+    overflow: hidden;
+
+    padding:
+      4rem
+      0
+      4.5rem;
+
+    background:
+      linear-gradient(
+        180deg,
+        var(--color-background) 0%,
+        #fffdfb 100%
+      );
+  }
+
+  .pricing-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* =========================================================
+     HEADING
+     ========================================================= */
+
+  .pricing-heading {
+    max-width: 34rem;
+
+    margin:
+      0
+      auto
+      2.25rem;
+
+    text-align: center;
+
+    scroll-margin-top: 5rem;
+  }
+
+  .pricing-heading-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+
+    display: grid;
+    place-items: center;
+
+    margin:
+      0
+      auto
+      0.5rem;
+
+    color:
+      var(--color-primary);
+
+    background:
+      var(--color-surface-soft);
+
+    border-radius:
+      var(--radius-pill);
+  }
+
+  .pricing-heading h2 {
+    font-size:
+      clamp(
+        1.9rem,
+        7.8vw,
+        2.45rem
+      );
+
+    line-height: 1.05;
+
+    letter-spacing:
+      -0.025em;
+  }
+
+  .pricing-heading p {
+    max-width: 30rem;
+
+    margin:
+      0.75rem
+      auto
+      0;
+
+    font-size: 0.92rem;
+    line-height: 1.6;
+
+    color:
+      var(--color-text-muted);
+  }
+
+  /* =========================================================
+     GRID
+     ========================================================= */
+
+  .pricing-grid {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    gap: 1.25rem;
+  }
+
+  /* =========================================================
+     CARD
+     ========================================================= */
+
+  .pricing-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding:
+      1.15rem
+      1rem;
+
+    background:
+      rgb(255 255 255 / 0.84);
+
+    border:
+      1px solid
+      rgb(242 223 227 / 0.72);
+
+    border-radius:
+      1.75rem;
+
+    box-shadow:
+      0 10px 28px
+      rgb(39 48 90 / 0.07);
+
+    transition:
+      transform
+      var(--transition-normal),
+      box-shadow
+      var(--transition-normal),
+      border-color
+      var(--transition-fast);
+  }
+
+  /* =========================================================
+     CARD HEADER
+     ========================================================= */
+
+  .pricing-card-header {
+    display: grid;
+
+    grid-template-columns:
+      auto
+      minmax(0, 1fr);
+
+    align-items: start;
+
+    gap: 0.85rem;
+
+    padding-bottom: 1rem;
+
+    border-bottom:
+      1px solid
+      var(--color-border);
+  }
+
+  /* =========================================================
+     ICONOS DE CADA SERVICIO
+     ========================================================= */
+
+  .pricing-card-icon {
+    width: 3rem;
+    height: 3rem;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius:
+      var(--radius-pill);
+  }
+
+  .pricing-card-icon-walk,
+  .pricing-card-icon-night,
+  .pricing-card-icon-special {
+    color:
+      var(--color-secondary);
+
+    background:
+      rgb(39 48 90 / 0.08);
+  }
+
+  .pricing-card-header h3 {
+    font-size: 1.55rem;
+    line-height: 1.1;
+
+    letter-spacing:
+      -0.015em;
+  }
+
+  .pricing-card-header p {
+    margin-top: 0.35rem;
+
+    font-size: 0.88rem;
+    line-height: 1.55;
+
+    color:
+      var(--color-text-muted);
+  }
+
+  /* =========================================================
+     PRICE LIST
+     ========================================================= */
+
+  .pricing-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pricing-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 0.8rem;
+
+    padding:
+      0.9rem
+      0;
+
+    border-bottom:
+      1px dashed
+      var(--color-border);
+  }
+
+  .pricing-row:last-child {
+    border-bottom: 0;
+  }
+
+  .pricing-row-info {
+    display: grid;
+
+    grid-template-columns:
+      auto
+      minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 0.65rem;
+
+    min-width: 0;
+  }
+
+  .pricing-row-icon {
+    width: 2.15rem;
+    height: 2.15rem;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    color:
+      var(--color-primary);
+
+    background:
+      var(--color-surface-soft);
+
+    border-radius:
+      var(--radius-pill);
+  }
+
+  .pricing-row-info h4 {
+    font-size: 0.9rem;
+    line-height: 1.25;
+  }
+
+  .pricing-row-info p {
+    margin-top: 0.1rem;
+
+    font-size: 0.78rem;
+    line-height: 1.35;
+
+    color:
+      var(--color-text-muted);
+  }
+
+  /* =========================================================
+     PRECIO
+     ========================================================= */
+
+  .pricing-price {
+    flex-shrink: 0;
+
+    padding:
+      0.45rem
+      0.65rem;
+
+    font-family:
+      var(--font-family-heading);
+
+    font-size: 1rem;
+    line-height: 1;
+
+    color:
+      var(--color-secondary);
+
+    background:
+      rgb(244 143 163 / 0.14);
+
+    border-radius:
+      0.85rem;
+  }
+
+  /* =========================================================
+     EXTRA PERRITOS
+     ========================================================= */
+
+  .pricing-extra {
+    display: grid;
+
+    grid-template-columns:
+      auto
+      minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 0.65rem;
+
+    margin-top: auto;
+
+    padding:
+      0.75rem
+      0.85rem;
+
+    color:
+      var(--color-secondary);
+
+    background:
+      var(--color-surface-soft);
+
+    border-radius:
+      1rem;
+  }
+
+  .pricing-extra > svg {
+    color:
+      var(--color-primary);
+  }
+
+  .pricing-extra p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .pricing-extra strong {
+    font-weight:
+      var(--font-weight-bold);
+  }
+
+  /* =========================================================
+     ESPECIALES
+     ========================================================= */
+
+  .pricing-card-special {
+    min-height: 100%;
+  }
+
+  .special-content {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+
+    min-height: 10rem;
+
+    padding:
+      1.5rem
+      0
+      0.5rem;
+  }
+
+  /* =========================================================
+     A CONVERSAR
+     ========================================================= */
+
+  .special-contact {
+    width: 100%;
+
+    min-height: 3.25rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.65rem;
+
+    padding:
+      0.65rem
+      1rem;
+
+    font-family:
+      var(--font-family-heading);
+
+    font-size: 1rem;
+
+    font-weight:
+      var(--font-weight-semibold);
+
+    color:
+      var(--color-secondary);
+
+    background:
+      linear-gradient(
+        135deg,
+        rgb(253 236 239 / 0.95),
+        rgb(247 183 195 / 0.65)
+      );
+
+    border-radius:
+      var(--radius-pill);
+
+    transition:
+      transform
+      var(--transition-fast),
+      box-shadow
+      var(--transition-fast);
+  }
+
+  .special-contact-icon {
+    width: 2rem;
+    height: 2rem;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    color:
+      var(--color-primary);
+
+    background:
+      rgb(255 255 255 / 0.78);
+
+    border-radius:
+      var(--radius-pill);
+  }
+
+  /* =========================================================
+     NOTA FINAL
+     ========================================================= */
+
+  .pricing-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.65rem;
+
+    width: fit-content;
+    max-width: 100%;
+
+    margin:
+      2.5rem
+      auto
+      0;
+
+    padding:
+      0.8rem
+      1.15rem;
+
+    text-align: center;
+
+    color:
+      var(--color-secondary);
+
+    background:
+      rgb(253 236 239 / 0.68);
+
+    border:
+      1px solid
+      rgb(247 183 195 / 0.45);
+
+    border-radius:
+      var(--radius-pill);
+  }
+
+  .pricing-note > svg {
+    flex-shrink: 0;
+
+    color:
+      var(--color-primary);
+  }
+
+  .pricing-note p {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  .pricing-note strong {
+    font-family:
+      var(--font-family-heading);
+  }
+
+  /* =========================================================
+     DECORACIONES
+     ========================================================= */
+
+  .pricing-blob {
+    position: absolute;
+
+    z-index: 0;
+
+    pointer-events: none;
+  }
+
+  .pricing-blob-top {
+    width: 12rem;
+    height: 7rem;
+
+    top: -3rem;
+    right: -5rem;
+
+    background:
+      rgb(247 183 195 / 0.16);
+
+    border-radius:
+      55% 45% 42% 58% /
+      44% 55% 45% 56%;
+
+    transform:
+      rotate(7deg);
+  }
+
+  .pricing-blob-bottom {
+    width: 13rem;
+    height: 7rem;
+
+    left: -5rem;
+    bottom: -3rem;
+
+    background:
+      rgb(247 183 195 / 0.14);
+
+    border-radius:
+      45% 55% 60% 40% /
+      50% 45% 55% 50%;
+
+    transform:
+      rotate(-8deg);
+  }
+
+  .pricing-decoration {
+    position: absolute;
+
+    z-index: 0;
+
+    color:
+      rgb(244 143 163 / 0.42);
+
+    pointer-events: none;
+  }
+
+  .pricing-decoration-heart {
+    top: 7rem;
+    left: 1.5rem;
+
+    transform:
+      rotate(-8deg);
+  }
+
+  .pricing-decoration-paw {
+    right: 1.5rem;
+    bottom: 3rem;
+
+    transform:
+      rotate(12deg);
+  }
+
+  /* =========================================================
+     TABLET
+     ========================================================= */
+
+  @media (min-width: 700px) {
+    .pricing {
+      padding:
+        4.5rem
+        0
+        5rem;
+    }
+
+    .pricing-heading {
+      margin-bottom: 2.5rem;
+    }
+
+    .pricing-heading h2 {
+      font-size: 2.7rem;
+    }
+
+    .pricing-heading p {
+      font-size: 1rem;
+    }
+
+    .pricing-card {
+      padding:
+        1.3rem
+        1.25rem;
+    }
+
+    .pricing-card-header h3 {
+      font-size: 1.7rem;
+    }
+
+    .pricing-card-header p {
+      font-size: 0.93rem;
+    }
+
+    .pricing-row-info h4 {
+      font-size: 0.95rem;
+    }
+
+    .pricing-price {
+      font-size: 1.08rem;
+    }
+
+    .pricing-note {
+      margin-top: 2.75rem;
+    }
+  }
+
+  /* =========================================================
+     DESKTOP
+     ========================================================= */
+
+  @media (min-width: 1000px) {
+    .pricing {
+      padding:
+        5rem
+        0
+        5.25rem;
+    }
+
+    .pricing-heading {
+      margin-bottom: 2.75rem;
+
+      scroll-margin-top: 6rem;
+    }
+
+    .pricing-heading h2 {
+      font-size: 2.5rem;
+    }
+
+    .pricing-grid {
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0, 1fr)
+        );
+
+      gap: 1.5rem;
+
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      padding:
+        1.35rem
+        1.25rem;
+
+      border-radius:
+        1.8rem;
+    }
+
+    .pricing-card-header h3 {
+      font-size: 1.65rem;
+    }
+
+    .pricing-card-header p {
+      font-size: 0.9rem;
+    }
+
+    .pricing-row-info h4 {
+      font-size: 0.9rem;
+    }
+
+    .pricing-row-info p {
+      font-size: 0.76rem;
+    }
+
+    .pricing-price {
+      font-size: 1.05rem;
+    }
+
+    .pricing-extra p {
+      font-size: 0.78rem;
+    }
+
+    .special-content {
+      min-height: 13rem;
+
+      padding-top: 1rem;
+    }
+
+    .pricing-note {
+      margin-top: 3rem;
+    }
+
+    .pricing-decoration-heart {
+      left: 3rem;
+    }
+
+    .pricing-decoration-paw {
+      right: 3rem;
+    }
+  }
+
+  /* =========================================================
+     HOVER
+     ========================================================= */
+
+  @media (hover: hover) and (pointer: fine) {
+    .pricing-card:hover {
+      transform:
+        translateY(-0.25rem);
+
+      border-color:
+        rgb(244 143 163 / 0.25);
+
+      box-shadow:
+        0 16px 34px
+        rgb(39 48 90 / 0.1);
+    }
+
+    .special-contact:hover {
+      transform:
+        translateY(-0.1rem);
+
+      box-shadow:
+        0 8px 18px
+        rgb(244 143 163 / 0.15);
+    }
+  }
+</style>
